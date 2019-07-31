@@ -1,0 +1,17 @@
+.container{
+    background-color: lightslategray;
+    margin-top:30px;
+}
+
+.ordered{
+    display:flex;
+}
+ol li{
+    background-color: aquamarine;
+    margin:10px;   
+    /* width:30px; */
+}
+
+.ordered button {
+    float:right;
+}

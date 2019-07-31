@@ -13,7 +13,7 @@ var orm = {
     insertOne: function(table,cols,vals,cb){
 
         var queryString = "INSERT INTO " + table + "(" +cols.toString()+ ")"+
-                          " VALUES ("+ vals.printQuestionMarks() +")";
+                          " VALUES ("+ printQuestionMarks(vals) +")";
                   
         connection.query(queryString,vals,function(err,result){
             if (err) throw err;
