@@ -26,15 +26,20 @@ router.post("/api/burgers",function(req,res){
     });
 })
 
-router.put("/api/burgers/:burger",function(req,res){
+router.put("/api/burgers/:id",function(req,res){
 
-    var condition = "burger_name ="+req.params.burger;
+    var condition = "id ="+req.params.id;
+    
     burger.updateOne({devoured:req.body.devoured},condition,function(result){
+        console.log("result",result);
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
           } else {
-            res.status(200).end();
+            res.status(200).json({
+                status:true,
+                msg:"updated successfully"
+            }).end();
           }
         
     });

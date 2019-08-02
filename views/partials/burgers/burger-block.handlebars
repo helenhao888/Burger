@@ -1,0 +1,13 @@
+
+{{#unless devoured}}
+<div class="ordered">
+	<div class="col-6">
+     	<li>
+			{{burger_name}}
+		</li>
+	</div>
+	<div class="col-4">
+		<button class="btn btn-info btnDevour" data-id="{{this.id}}" bName="{{this.burger_name}}">DEVOUR IT!</button>
+	</div>
+</div>
+{{/unless}}

@@ -46,13 +46,21 @@ function printQuestionMarks(val){
 function objToSql(obj){
 
     console.log("obj",obj);
-    var colArr=obj.split(",");
+    var resArray=[];
+   
+    for (key in obj){
+        var value = obj[key];
+        if (Object.hasOwnProperty.call(obj,key))
+        {
+            if (typeof(value) === "string" && value.indexOf(" ")>=0){
 
-    for (var i=0;i<colArr.length;i++){
-         colArr[i].replace(":","=");  
+                value = "'"+value+"'";
+            }
+            resArray.push(key+"="+value);
+        }
     }
 
-    return colArr.toString();
+    return resArray.toString();
 }
 
 //Export the ORM object

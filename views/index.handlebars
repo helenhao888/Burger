@@ -3,25 +3,40 @@
         <img src="/assets/img/burger.png" alt="burger phot">
     </div>
     <div class="row  justify-content-center">
-        <H2>Eat-Da-Burger</H2>
+        <H1>Eat-Da-Burger</H1>
     </div>  
+
     <div class="row">
         <div class="col-8 ">
+            <h2>Burgers are available !</h2>
             <ol id="orderedBurger">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block }}
+                    {{/unless}}
+                {{/each}}
                 {{!-- <div class="ordered">
                     <div class="col-6">
                         <li>check</li>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <button class="btn btn-info">btn</button>
                     </div>
                 </div> --}}
                
             </ol>
         </div>
-        {{!-- <div class="col-2 btnDiv"></div> --}}
+    
         <div class="col-4" >
-            <ol id="devouredBurger"></ol>
+            <h2>Burgers devoured!</h2>
+            <ol id="devouredBurger">
+                 {{#each burgers}}
+                    {{#if devoured}}
+                    {{!-- {{> burgers/burger-block }} --}}
+                    <li>{{this.burger_name}}</li>
+                    {{/if}}
+                {{/each}}
+            </ol>
         </div>
     </div>
     <div class="row  justify-content-center">
