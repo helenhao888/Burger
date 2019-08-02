@@ -3,14 +3,18 @@ $(document).on("click","#btnBurger",function(event){
     event.preventDefault();
     var burgerName = $("#inputBurger").val().trim();
     
-
+   //validate input field
     if( burgerName === ""){
-        alert(" input burger ");
+        $(".modal-body-info").empty();
+        var divTagQ=$("<div>").text("Please input burger name!");
+        $(".modal-body-info").append(divTagQ);
+        $("#modal-info").modal("show");
     }else{
          createBurger(burgerName);
     }
 })
 
+//make ajax call to insert new burger into table 
 function createBurger(burger){
 
     var newBurger = {
@@ -19,19 +23,10 @@ function createBurger(burger){
    
     $.post("/api/burgers",newBurger,function(data){
 
-        if ( data ){     
+        if ( data.status ){     
            
             $("#inputBurger").val("");
-            // var newDiv = $("<div>").addClass("ordered");
-            // var newCol = $("<div>").addClass("col-6");
-            // var newList=$("<li>").text(burger);
-            // newCol.append(newList);
-            // var btnCol =  $("<div>").addClass("col-4");
-            // var newBtn = $("<button>").text("DEVOUR IT!").addClass("btn btn-info btnDevour");
-            // newBtn.attr({"data-id":data.id,"bName":data.burger_name});
-            // btnCol.append(newBtn);
-            // newDiv.append(newCol,btnCol);
-            // $("#orderedBurger").append(newDiv);
+            //after inserted, reload the page to reflect the updated items.
             location.reload();
 
         } else {
@@ -44,8 +39,7 @@ function createBurger(burger){
 $(document).on("click",".btnDevour",function(event){
 
     event.preventDefault();
-
-    var burgerUpd = $(this).attr("bName");
+  
     var burgerId = $(this).attr("data-id");
     var newDevour = {
         devoured: true
@@ -56,6 +50,7 @@ $(document).on("click",".btnDevour",function(event){
     
 })  
 
+//make ajax call to update burger table with devoured status to true
 function updateDb(burgerIdU,newDevourU){
 
 
@@ -64,6 +59,7 @@ function updateDb(burgerIdU,newDevourU){
         data:newDevourU
         }).then(function(data){
             if(data.status){
+                //after updated, reload the page to reflect the updated items.
                 location.reload();
             }else{
                 console.log("update err");

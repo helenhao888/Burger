@@ -1,5 +1,6 @@
 var connection = require("./connection.js");
 
+//orm functions
 var orm = {
     selectAll: function(table,cb){
 
@@ -33,7 +34,8 @@ var orm = {
         })
     }
 }
-   
+
+
 function printQuestionMarks(val){
     var quesArr=[];
     for (var i=0;i<val.length;i++){
@@ -42,10 +44,10 @@ function printQuestionMarks(val){
     return quesArr.toString();
 }
 
-// Change obj (for example {name: panther, sleepy: true}) 
+// Change object to sql format 
 function objToSql(obj){
 
-    console.log("obj",obj);
+   
     var resArray=[];
    
     for (key in obj){

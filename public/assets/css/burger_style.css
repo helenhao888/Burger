@@ -3,19 +3,15 @@
     margin-top:30px;
 }
 
-.ordered{
-    display:flex;
-}
+
 ol li{
     background-color: aquamarine;
-    margin:10px;   
-    /* width:30px; */
+    margin:5px;   
 }
 
-.ordered button {
-    float:right;
-}
-
+.btnDevour {
+    justify-self: center;
+} 
 img{
     margin:10px;
 }
@@ -25,4 +21,19 @@ h1{
 
 h2{
     color:darkmagenta;
+    font-size:24px;
+}
+
+.modal-content{
+    background-color:darkolivegreen;
+    color:white;
+}
+
+.modal-header{
+    background-color: rgb(236, 238, 113);
+    color:purple;
+}
+
+.modal-footer{
+    background-color:lightskyblue;
 }
