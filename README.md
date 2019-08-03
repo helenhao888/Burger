@@ -11,7 +11,10 @@ A burger logger with MySQL, Node, Express, Handlebars and ORM, following the MVC
 * Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
 ### App Live Link
-https://
+https://cryptic-sierra-23097.herokuapp.com/
+
+### APP HEROKU GIT LINK
+https://git.heroku.com/cryptic-sierra-23097.git
 
 ### App GitHub Link
 https://github.com/helenhao888/Burger.git
