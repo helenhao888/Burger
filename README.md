@@ -14,7 +14,7 @@ A burger logger with MySQL, Node, Express, Handlebars and ORM, following the MVC
 https://
 
 ### App GitHub Link
-https://
+https://github.com/helenhao888/Burger.git
 
 ### Developer
     Developed by Helen Hao (helenhao888)
