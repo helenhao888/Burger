@@ -38,15 +38,15 @@ https://github.com/helenhao888/Burger.git
 ### Screenshots
 1. Add a new burger
    Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
-   ![add burger](public/assets/img/addBurger.png)
+   ![add burger](public/assets/img/addBurger.jpg)
 
 2. Devour a burger
     Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
-   ![devour burger](public/assets/img/devourBurger.png)
+   ![devour burger](public/assets/img/devourBurger.jpg)
 
 3. validation check 
    If user doesn't input burger name and press submit button,it displays error message. 
-   ![input validation](public/assets/img/noBurgerName.png)
+   ![input validation](public/assets/img/noBurgerName.jpg)
 
 #### Directory structure
 ```

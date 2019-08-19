@@ -1,5 +1,6 @@
 .container{
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
+    background-image: url("../img/background.jpg");
     margin-top:30px;
 }
 
